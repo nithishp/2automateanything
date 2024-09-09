@@ -11,6 +11,7 @@ import TestimonialSlider from "./_components/TestimonialSlider";
 import TestimonialCarousel from "./_components/TestimonialCarousel";
 import { InView } from "@/components/motion-primitives/InView";
 import { AuroraBackgroundDemo } from "./_components/AuroraBg";
+import BasicFAQ from "./_components/BasicFaq";
 
 
 
@@ -38,6 +39,7 @@ export default function Home() {
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <SectionTitle
+        id="whatweoffer"
           title=" What we offer"
           subtitle=" 2 Automate Anything (2AA) is a Sydney based Australian group offers you
         everything needed for your digital transformation journey, we travel
@@ -50,8 +52,8 @@ export default function Home() {
       <FeaturesSection />
       <TailBrands />
       <TestimonialCarousel />
-      {/* <TestimonialSlider /> */}
-      <TailBlog />
+      <BasicFAQ/>
+      {/* <TailBlog /> */}
     </main>
   );
 }

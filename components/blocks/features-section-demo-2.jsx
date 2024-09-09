@@ -75,6 +75,7 @@ export default function FeaturesSection() {
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
         <SectionTitle
+        id="whatyouget"
           title="What you get"
           subtitle=" 2 Automate Anything (2AA) is a Sydney based Australian group offers you
         everything needed for your digital transformation journey, we travel
@@ -82,13 +83,13 @@ export default function FeaturesSection() {
         process will help your business journey to the next level."
         />
       </InView>
-      (
+    
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
         {features.map((feature, index) => (
           <Feature key={feature.title} {...feature} index={index} />
         ))}
       </div>
-      )
+      
     </>
   );
 }

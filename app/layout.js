@@ -4,6 +4,7 @@ import Sidebar from "./_components/sidebar/Sidebar";
 import Image from "next/image";
 import { NavbarDemo } from "./_components/navbar/Navbar";
 import TailFooter from "./_components/TailFooter";
+import FlyoutNav from "./_components/Flyout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,14 +17,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="md:hidden lg:hidden xl:hidden">
+        <FlyoutNav/>
+        {/* <div className="md:hidden lg:hidden xl:hidden">
         <div>
             <Sidebar />
           
         </div>
         </div>
 
-        <NavbarDemo />
+        <NavbarDemo /> */}
         {children}
         <TailFooter />
       </body>

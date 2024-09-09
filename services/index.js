@@ -128,3 +128,32 @@ export const getPostDetails = async (slug) => {
 console.log(result,"get post details query")
   return result;
 };
+
+export const getFeaturedPost = async () => {
+  const query = gql`
+    query MyQuery {
+      posts(where: { featuredPost: true }, first: 3) {
+        category {
+          name
+          slug
+        }
+        excerpt
+        title
+        featuredImage {
+          url
+        }
+        author {
+          name
+          photo {
+            url
+          }
+        }
+        createdAt
+      }
+    }
+  `;
+
+  const result = await request(graphqlAPI, query);
+
+  return result.posts;
+};

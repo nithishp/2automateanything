@@ -1,8 +1,8 @@
 import React from 'react'
 
-const SectionTitle = ({title,subtitle,containerStyle}) => {
+const SectionTitle = ({title,subtitle,containerStyle,id}) => {
   return (
-    <div className={`w-full  h-full ${containerStyle}`}>
+    <div className={`w-full  h-full ${containerStyle}` } id={`${id}`}>
       <h2 className="max-w-7xl pl-4 pb-3 mx-auto text-3xl text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-pink-600 md:text-5xl font-bold text-gray-800 dark:text-neutral-200 font-sans">
         {title}
       </h2>
