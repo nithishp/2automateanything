@@ -52,7 +52,6 @@ export default function Home() {
       <TestimonialCarousel />
       {/* <TestimonialSlider /> */}
       <TailBlog />
-       <TailFooter />
     </main>
   );
 }

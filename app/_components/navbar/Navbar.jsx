@@ -4,6 +4,7 @@ import { Menu, MenuItem, ProductItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
 import { HoveredLink } from "@/components/ui/navbar-menu";
 import Image from "next/image";
+import Link from "next/link";
 
 export function NavbarDemo() {
   return (
@@ -21,21 +22,22 @@ function Navbar({ className }) {
     >
       <Menu setActive={setActive}>
         <div>
-          <Image
-            src="/logos/logo-black-new.svg"
-            className="w-15 mr-3"
-            alt="Logo"
-            width={80}
-            height={75}
-          />
+          <Link href="/">
+            <Image
+              src="/logos/logo-black-new.svg"
+              className="w-15 mr-3"
+              alt="Logo"
+              width={80}
+              height={75}
+            />
+          </Link>
         </div>
-        <MenuItem setActive={setActive} active={active} item="Our Story">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/web-dev">Our Story</HoveredLink>
-            <HoveredLink href="/interface-design">Our team</HoveredLink>
-            <HoveredLink href="/seo">Past projects</HoveredLink>
-          </div>
-        </MenuItem>
+        <MenuItem
+          setActive={setActive}
+          href="/story"
+          active={active}
+          item="Our Story"
+        ></MenuItem>
         <MenuItem
           setActive={setActive}
           active={active}
@@ -72,7 +74,12 @@ function Navbar({ className }) {
             />
           </div>
         </MenuItem>
-        
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          href="/blog"
+          item="Blog"
+        />
       </Menu>
     </div>
   );

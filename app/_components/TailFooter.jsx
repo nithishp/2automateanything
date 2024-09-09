@@ -84,7 +84,7 @@ const TailFooter = () => {
           </ul>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 border-t border-gray-100 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:pt-16">
+        <div className="grid grid-cols-1 gap-8 border-t border-amber-600 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:pt-16">
           <div>
             <p className="font-medium text-amber-900">Services</p>
 

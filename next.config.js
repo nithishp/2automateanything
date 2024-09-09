@@ -1,4 +1,5 @@
 module.exports = {
+  reactStrictMode: true,
   images: {
     remotePatterns: [
       {
@@ -9,6 +10,11 @@ module.exports = {
       {
         protocol: "https",
         hostname: "assets.aceternity.com",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "ap-south-1.graphassets.com",
         port: "",
       },
     ],

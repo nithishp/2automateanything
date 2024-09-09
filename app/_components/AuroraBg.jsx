@@ -13,13 +13,7 @@ import Image from "next/image";
 export function AuroraBackgroundDemo() {
   return (
     <AuroraBackground>
-      <div className="md:hidden lg:hidden xl:hidden"> 
-        <Sidebar />
-        <Image src='/logos/logo-black-new.svg'  width={100} height={70} alt="Logo"/>
-      </div>
-     
-
-        <NavbarDemo />
+      
     
       <motion.div
         initial={{ opacity: 0.0, y: 40 }}
