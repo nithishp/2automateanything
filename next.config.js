@@ -17,6 +17,12 @@ module.exports = {
         hostname: "ap-south-1.graphassets.com",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "aceternity.com",
+        port: "",
+      },
     ],
   },
 };
+//aceternity.com

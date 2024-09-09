@@ -19,13 +19,7 @@ export default function RootLayout({ children }) {
         <div className="md:hidden lg:hidden xl:hidden">
         <div>
             <Sidebar />
-          <Image
-          className="mx-auto"
-            src="/logos/logo-black-new.svg"
-            width={100}
-            height={70}
-            alt="Logo"
-          />
+          
         </div>
         </div>
 

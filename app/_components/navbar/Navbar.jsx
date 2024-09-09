@@ -62,7 +62,7 @@ function Navbar({ className }) {
           <div className="  text-sm grid grid-cols-2 gap-10 p-4">
             <ProductItem
               title="Web Growth Package"
-              href="/package"
+              href="/webdev"
               src="/images/website.png"
               description="Want an AWESOME!! website to impress your client? We can help you"
             />
