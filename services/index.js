@@ -5,25 +5,29 @@ const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 export const getPosts = async () => {
   const query = gql`
     query MyQuery {
-      posts {
-        author {
-          bio
-          name
-          id
-          photo {
-            url
+      postsConnection {
+        edges {
+          node {
+            title
+            author {
+              bio
+              name
+              photo {
+                url
+                createdAt
+              }
+              id
+            }
+            slug
+            excerpt
+            featuredImage {
+              url
+            }
+            category {
+              name
+              slug
+            }
           }
-        }
-        createdAt
-        slug
-        title
-        excerpt
-        featuredImage {
-          url
-        }
-        category {
-          name
-          slug
         }
       }
     }
@@ -31,8 +35,8 @@ export const getPosts = async () => {
 
   const result = await request(graphqlAPI, query);
   
-
-  return result.posts;
+  console.log(result.postsConnection.edges, "get posts");
+  return result.postsConnection.edges;
 };
 
 export const getRecentPosts = async()=>{

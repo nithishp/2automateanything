@@ -88,7 +88,7 @@ const NavLink = ({ children, href, FlyoutContent }) => {
           style={{
             transform: showFlyout ? "scaleX(1)" : "scaleX(0)",
           }}
-          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-indigo-300 transition-transform duration-300 ease-out"
+          className="absolute -bottom-2 -left-2 -right-2 h-1 origin-left scale-x-0 rounded-full bg-amber-300 transition-transform duration-300 ease-out"
         />
       </a>
       <AnimatePresence>
@@ -141,7 +141,7 @@ const AboutUsContent = () => {
       </div>
       <div className="col-span-12 grid grid-cols-2 grid-rows-2 gap-3 bg-white p-6 lg:col-span-8">
         <a
-          href="#about"
+          href="/#about"
           className="rounded border-2 border-neutral-200 bg-white p-3 transition-colors hover:bg-neutral-100"
         >
           <h3 className="mb-1 font-semibold">Our Company</h3>
@@ -150,7 +150,7 @@ const AboutUsContent = () => {
           </p>
         </a>
         <a
-          href="#whyus"
+          href="/#whyus"
           className="rounded border-2 border-neutral-200 bg-white p-3 transition-colors hover:bg-neutral-100"
         >
           <h3 className="mb-1 font-semibold">Why Us?</h3>
@@ -159,7 +159,7 @@ const AboutUsContent = () => {
           </p>
         </a>
         <a
-          href="#whatweoffer"
+          href="/#whatweoffer"
           className="rounded border-2 border-neutral-200 bg-white p-3 transition-colors hover:bg-neutral-100"
         >
           <h3 className="mb-1 font-semibold">What we Offer</h3>
@@ -168,7 +168,7 @@ const AboutUsContent = () => {
           </p>
         </a>
         <a
-          href="#whatyouget"
+          href="/#whatyouget"
           className="rounded border-2 border-neutral-200 bg-white p-3 transition-colors hover:bg-neutral-100"
         >
           <h3 className="mb-1 font-semibold">What you get</h3>
@@ -214,6 +214,53 @@ const PricingContent = () => {
   );
 };
 
+const ServicesContent = () => {
+  return (
+    <div className="grid w-full grid-cols-12 shadow-xl lg:w-[750px]">
+      <div className="col-span-12 flex flex-col justify-between bg-indigo-600 p-6 lg:col-span-4">
+        <div className="mb-6">
+          <h2 className="mb-2 text-xl font-semibold text-white">Services</h2>
+          <p className="text-sm text-indigo-100">
+            Look at the list of services we offer.
+          </p>
+        </div>
+        <a
+          href="#whatweoffer"
+          className="flex items-center gap-1 text-xs text-indigo-200 hover:underline"
+        >
+          Take a Look <FiArrowRight />
+        </a>
+      </div>
+      <div className="col-span-12 grid grid-cols-2 gap-3 bg-white p-6 lg:col-span-8 lg:grid-cols-3">
+        <div className="space-y-3">
+          <Link
+            href="/webdev"
+            className="font-semibold hover:underline cursor-pointer"
+          >
+            Web Growth
+          </Link>
+        </div>
+        <div className="space-y-3">
+          <Link
+            href="/webdev"
+            className="font-semibold hover:underline cursor-pointer"
+          >
+            Digital gowth
+          </Link>
+        </div>
+        <div className="space-y-3">
+          <Link
+            href="/webdev"
+            className="font-semibold hover:underline cursor-pointer"
+          >
+            Intelligent Automation
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const CareersContent = () => {
   return (
     <div className="grid w-full grid-cols-12 shadow-xl lg:w-[750px]">
@@ -233,18 +280,30 @@ const CareersContent = () => {
       </div>
       <div className="col-span-12 grid grid-cols-2 gap-3 bg-white p-6 lg:col-span-8 lg:grid-cols-3">
         <div className="space-y-3">
-          <h3 className="font-semibold">Business</h3>
+          <h3 className="font-semibold">Web Growth</h3>
           <a href="#" className="block text-sm hover:underline">
-            Digital Marketing
+            Web Design
           </a>
           <a href="#" className="block text-sm hover:underline">
-            Social Media Management
+            Web Development
           </a>
           <a href="#" className="block text-sm hover:underline">
             Posters
           </a>
           <a href="#" className="block text-sm hover:underline">
             Banners & Flyouts
+          </a>
+        </div>
+        <div className="space-y-3">
+          <h3 className="font-semibold">Digital gowth</h3>
+          <a href="#" className="block text-sm hover:underline">
+            Digital Marketing
+          </a>
+          <a href="#" className="block text-sm hover:underline">
+            Static & Dynamic Websites
+          </a>
+          <a href="#" className="block text-sm hover:underline">
+            IOS & Android development
           </a>
         </div>
         <div className="space-y-3">
@@ -257,19 +316,6 @@ const CareersContent = () => {
           </a>
           <a href="#" className="block text-sm hover:underline">
             Robot Process Automation
-          </a>
-         
-        </div>
-        <div className="space-y-3">
-          <h3 className="font-semibold">Development</h3>
-          <a href="#" className="block text-sm hover:underline">
-            Web UI/UX Design
-          </a>
-          <a href="#" className="block text-sm hover:underline">
-            Static & Dynamic Websites
-          </a>
-          <a href="#" className="block text-sm hover:underline">
-            IOS & Android development
           </a>
         </div>
       </div>
@@ -395,7 +441,7 @@ const LINKS = [
   {
     text: "Careers",
     href: "#",
-    component: CareersContent,
+    component: ServicesContent,
   },
   {
     text: "Blog",

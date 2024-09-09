@@ -91,14 +91,12 @@ const Copy = ({ opacity }) => {
       className="relative flex h-4/5 flex-col items-center justify-center gap-4 overflow-hidden bg-white p-4 pt-[calc(56px_+_16px)] text-black"
     >
       <h1 className="text-center text-5xl font-black md:text-7xl">
-        Drive in the deep end
+        Take a dive to Magic!!
       </h1>
       <p className="text-center text-base md:text-lg">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Welcome to the fairy land of websites
       </p>
-      <button className="bg-black px-3 py-1.5 text-base font-semibold uppercase text-white md:text-lg">
-        Get started
-      </button>
+    
       <div className="absolute -left-28 -top-28 h-56 w-56 rotate-45 bg-black" />
       <div className="absolute -bottom-24 -right-24 h-48 w-48 rotate-45 bg-black" />
     </motion.div>

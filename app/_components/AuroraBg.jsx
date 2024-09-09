@@ -13,8 +13,6 @@ import Image from "next/image";
 export function AuroraBackgroundDemo() {
   return (
     <AuroraBackground>
-      
-    
       <motion.div
         initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -35,7 +33,15 @@ export function AuroraBackgroundDemo() {
           “Experts in Intelligent Automation and Software Product development”
         </div>
         <div className="flex justify-center items-center gap-10">
-          <button className="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer  z-10 group">
+          <button
+            onClick={() => {
+              const element = document.getElementById("whyus");
+              element?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            className="overflow-hidden relative w-32 p-2 h-12 bg-black text-white border-none rounded-md text-xl font-bold cursor-pointer  z-10 group"
+          >
             Get Started
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-white rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-500 duration-1000 origin-left"></span>
             <span className="absolute w-36 h-32 -top-8 -left-2 bg-amber-400 rotate-12 transform scale-x-0 group-hover:scale-x-100 transition-transform group-hover:duration-700 duration-700 origin-left"></span>
