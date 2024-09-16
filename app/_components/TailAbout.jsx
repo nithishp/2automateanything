@@ -61,7 +61,7 @@ const links = [
               </h2>
             </InView>
             <p className="mt-6 text-lg leading-8 text-gray-100">
-              2 Automate Anything (2AA) is a Sydney based Australian group
+              2AutomateAnything (2AA) is a Sydney based Australian group
               offers you everything needed for your digital transformation
               journey, we travel together all the way to grow your business and
               our immense automation process will help your business journey to

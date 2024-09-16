@@ -49,7 +49,7 @@ export default function TailFeature() {
               What sets us apart?
             </p>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              At 2 Automate Anything (2AA), we understand that selecting the
+              At 2AutomateAnything (2AA), we understand that selecting the
               right partner for your digital transformation journey is crucial.
               Here’s why we stand out as the preferred choice for businesses
               aiming to innovate, automate, and thrive in today's competitive

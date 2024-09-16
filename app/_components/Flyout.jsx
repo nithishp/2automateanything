@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FiMenu, FiArrowRight, FiX, FiChevronDown } from "react-icons/fi";
 import { FaUserCircle } from "react-icons/fa";
 import {
@@ -14,6 +14,7 @@ import Link from "next/link";
 
 
 const FlyoutNav = () => {
+    const [scrollDirection, setScrollDirection] = useState("up");
   const [scrolled, setScrolled] = useState(false);
   const { scrollY } = useScroll();
 
@@ -21,25 +22,42 @@ const FlyoutNav = () => {
     setScrolled(latest > 250 ? true : false);
   });
 
+    useEffect(() => {
+      let lastScrollY = 0;
+      const handleScroll = () => {
+        const currentScrollY = window.scrollY;
+        setScrollDirection(currentScrollY > lastScrollY ? "down" : "up");
+        lastScrollY = currentScrollY;
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
   return (
-    <nav
+    <motion.nav
+      initial={{ y: 0 }}
+      animate={{
+        y: scrollDirection === "down" && scrolled ? -100 : 0,
+      }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 z-50 w-full px-6 text-white 
       transition-all duration-300 ease-out lg:px-12
       ${
         scrolled
           ? "bg-amber-600 py-3 shadow-xl"
-          : "bg-amber-600/70 py-6 shadow-none"
+          : "bg-amber-600/0 py-6 shadow-none"
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between">
-        <Logo />
+        <Logo color={scrolled ? "white" : "black"} />
         <div className="hidden gap-6 lg:flex">
-          <Links />
+          <Links scrolled={scrolled}/>
           <CTAs />
         </div>
         <MobileMenu />
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
@@ -59,9 +77,9 @@ const Logo = ({ color = "white" }) => {
   );
 };
 
-const Links = () => {
+const Links = ({scrolled}) => {
   return (
-    <div className="flex items-center gap-6">
+    <div className={`flex items-center gap-6 ${scrolled?'':'text-black'}`}>
       {LINKS.map((l) => (
         <NavLink key={l.text} href={l.href} FlyoutContent={l.component}>
           {l.text}
@@ -125,16 +143,16 @@ const CTAs = () => {
 const AboutUsContent = () => {
   return (
     <div className="grid h-fit w-full grid-cols-12 shadow-xl lg:h-72 lg:w-[600px] lg:shadow-none xl:w-[750px]">
-      <div className="col-span-12 flex flex-col justify-between bg-neutral-950 p-6 lg:col-span-4">
+      <div className="col-span-12 flex flex-col justify-between bg-amber-500 p-6 lg:col-span-4">
         <div>
           <h2 className="mb-2 text-xl font-semibold text-white">About us</h2>
-          <p className="mb-6 max-w-xs text-sm text-neutral-400">
+          <p className="mb-6 max-w-xs text-sm text-neutral-50">
             Look a glance at out company and what we stand for.
           </p>
         </div>
         <a
           href="/story"
-          className="flex items-center gap-1 text-xs text-indigo-300 hover:underline"
+          className="flex items-center gap-1 text-xs text-neutral-100 hover:underline"
         >
           Our Story <FiArrowRight />
         </a>
@@ -439,12 +457,12 @@ const LINKS = [
   },
  
   {
-    text: "Careers",
+    text: "Services",
     href: "#",
     component: ServicesContent,
   },
   {
-    text: "Blog",
+    text: "News",
     href: "/blog",
   },
 ];

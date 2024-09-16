@@ -9,9 +9,8 @@ const page = () => {
   return (
     <div>
         <HeroParallaxDemo/>
-        <Hero/>
         <TextParallaxContentExample/>
-        <SlidePricing/>
+      
     </div>
   )
 }

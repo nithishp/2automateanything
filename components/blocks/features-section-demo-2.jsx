@@ -77,7 +77,7 @@ export default function FeaturesSection() {
         <SectionTitle
         id="whatyouget"
           title="What you get"
-          subtitle=" 2 Automate Anything (2AA) is a Sydney based Australian group offers you
+          subtitle=" 2AutomateAnything (2AA) is a Sydney based Australian group offers you
         everything needed for your digital transformation journey, we travel
         together all the way to grow your business and our immense automation
         process will help your business journey to the next level."

@@ -26,8 +26,9 @@ export default function Home() {
   return (
     <main>
     
-      {/* <TailHero /> */}
-      <AuroraBackgroundDemo/>
+      <TailHero />
+      {/* <AuroraBackgroundDemo/> */}
+      
       <TailAbout />
       <TailFeature />
       <InView
@@ -41,7 +42,7 @@ export default function Home() {
         <SectionTitle
         id="whatweoffer"
           title=" What we offer"
-          subtitle=" 2 Automate Anything (2AA) is a Sydney based Australian group offers you
+          subtitle=" 2AutomateAnything (2AA) is a Sydney based Australian group offers you
         everything needed for your digital transformation journey, we travel
         together all the way to grow your business and our immense automation
         process will help your business journey to the next level."
